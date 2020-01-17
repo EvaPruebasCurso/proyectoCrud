@@ -1,0 +1,20 @@
+.imagen{
+    width: 8rem;
+    height: 6rem;
+    margin-top:2rem;
+}
+.titulo{
+    margin-top:3rem;
+}
+.fondo{
+    background-color:rgb(247, 199, 213);
+    height: 33rem;
+    width: 90%;
+}
+.row{
+    margin-bottom: 2rem;
+   
+}
+.boton{
+    margin-right:1rem;
+}

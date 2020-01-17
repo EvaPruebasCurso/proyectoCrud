@@ -1,0 +1,24 @@
+<div class="container-fluid fondo"> 
+  <div class="row mt-5">
+    <div class="col-10">
+      <div class="row ">
+        <div class="col-2 offset-4"><img class="imagen" src="../assets/img/logo-comotumascotas.png" alt="logo de mascotas"></div>
+        <div class="col-5 titulo"><h1><strong>MUNDO MASCOTA</strong></h1></div>
+     </div>
+     </div>
+  </div> <!-- Fin fila-->
+    <div class="row mt-5 offset-4">
+    <div class="col-10">
+    <button type="button" (click)="abrirListado()" class="col-2 btn btn-outline-dark boton">Listado</button>
+    <button type="button" (click)="abrirAlta()" class="col-2 btn btn-outline-dark boton">Alta</button>
+    <button type="button" (click)="abrirModificar()" class="col-2 btn btn-outline-dark boton">Modificar</button>
+    </div>
+    </div>
+    <router-outlet></router-outlet>
+</div> <!-- Fin contenedor-->
+
+
+
+
+
+
