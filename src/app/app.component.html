@@ -1,21 +1,106 @@
-<div class="container-fluid fondo"> 
-  <div class="row mt-5">
-    <div class="col-10">
-      <div class="row ">
-        <div class="col-2 offset-4"><img class="imagen" src="../assets/img/logo-comotumascotas.png" alt="logo de mascotas"></div>
-        <div class="col-5 titulo"><h1><strong>MUNDO MASCOTA</strong></h1></div>
-     </div>
-     </div>
-  </div> <!-- Fin fila-->
-    <div class="row mt-5 offset-4">
-    <div class="col-10">
-    <button type="button" (click)="abrirListado()" class="col-2 btn btn-outline-dark boton">Listado</button>
-    <button type="button" (click)="abrirAlta()" class="col-2 btn btn-outline-dark boton">Alta</button>
-    <button type="button" (click)="abrirModificar()" class="col-2 btn btn-outline-dark boton">Modificar</button>
-    </div>
-    </div>
-    <router-outlet></router-outlet>
-</div> <!-- Fin contenedor-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MASCOTILANDIA</title>
+  
+</head>
+<body>
+
+
+<!--PARA EL PRIMER LOGIN-->
+<div *ngIf="num==-1" class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="mt-5">Entra en Mascotilandia</h3>
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="username">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Recuérdame
+					</div>
+					<div class="form-group">
+            <button type="reset" value="Borrar" class="btn float-right ml-1 login_btn">Borrar</button>
+            <button type="submit" value="Entrar" class="btn float-right login_btn">Entrar</button>
+            
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center pie">
+					Una aplicación por y para mascotas
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--SI ENTRA EL ADMIN-->
+<div *ngIf="num==0" class="container-fluid">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card2">
+			<div class="card-header">
+        <h3 class="text-center">BIENVENIDO ADMINISTRADOR</h3>
+        <p class="text-center">¿Qué desea gestionar?</p>
+				<div class="form-group botones">
+          <button class="btn float mr-3 boton" (click)="abrirListadousuario()">Usuarios <i class="fas fa-users icono" ></i></button>
+		  <button class="btn float ml-3 boton" (click)="abrirListadomascota()">Mascotas <i class="fas fa-paw icono"></i></button>
+		  <button class="btn float mr-3 boton" >Ventas <i class="fas fa-shopping-cart"></i></button>
+		  <button class="btn float ml-3 boton" >Cerrar app <i class="fas fa-times-circle"></i></button>
+        </div>
+			</div>
+			<div class="card-body">
+        
+          
+      <router-outlet></router-outlet>	
+			</div>
+		</div>
+	</div>
+</div>
+<!--SI ENTRA UN USUARIO-->
+<div *ngIf="num==1" class="container-fluid">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card2">
+			<div class="card-header">
+        <h3 class="text-center">BIENVENIDO {{username}}</h3>
+        <p class="text-center">¿Qué desea hacer?</p>
+		<div class="form-group botones">
+			<button class="btn float mr-3 boton" >Listado para la venta <i class="fas fa-paw icono"></i></button>
+			<button class="btn float ml-3 boton" >Filtrar por tipo <i class="fas fa-search"></i></button>
+			<button class="btn float ml-3 boton" >Histórico de ventas <i class="fas fa-list"></i></button>
+			<button class="btn float ml-3 boton" >Cerrar app <i class="fas fa-times-circle"></i></button>
+		  </div>
+			</div>
+			<div class="card-body">
+        
+          
+      <router-outlet></router-outlet>	
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
 
 
 

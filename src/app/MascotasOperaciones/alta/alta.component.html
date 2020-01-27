@@ -1,0 +1,14 @@
+<h5 class="text-center titulo">Alta mascota</h5>
+        <form class="form-group col-4 offset-4" (submit)="getAlta(m)" #formu="ngForm"> 
+            <label class="titulo" for="nombre">Nombre de la mascota:</label>
+            <input class="form-control" type="string" autocomplete="off" name="nombre" id="nombre" required [(ngModel)]="m.nombre">
+            <label class="titulo" for="tipo">Tipo de la mascota:</label>
+            <input class="form-control" type="text" autocomplete="off" name="tipo" id="tipo" required [(ngModel)]="m.tipo" #tipo="ngModel"> 
+            <div class="alert alert-danger" *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)"> 
+            <div *ngIf="tipo.errors.required">El tipo es obligatorio</div>
+            </div>
+            <label class="titulo" for="precio">Precio de la mascota:</label>
+            <input class="form-control" type="number" autocomplete="off" name="precio" id="precio" required [(ngModel)]="m.precio">
+            <button type="submit" class="mt-3 boton btn float-right" [disabled]="!formu.form.valid">Alta</button>
+        </form>
+        

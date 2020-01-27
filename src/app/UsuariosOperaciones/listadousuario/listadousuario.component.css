@@ -1,0 +1,13 @@
+.titulo{
+    color:white ;
+}
+.boton{
+    color: black;
+    background-color: rgb(151, 240, 116);
+    margin-bottom: 0.3rem;
+}
+.botonmod{
+    background-color: rgb(151, 240, 116);
+    color: #343a40;
+    margin-left: 35%;
+}
