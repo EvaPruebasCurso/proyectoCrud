@@ -10,21 +10,25 @@ import { Usuario } from './Interfaces/usuario';
 })
 export class AppComponent {
   title = 'proyectoCrud';
-  username="usernam";
-  password=null;
-  num:number=1;
+  username:string;
+  password:string;
+  num:number=-1;
   u:Usuario;
 
-  constructor(private router:Router, private ms:UsuarioService){
+  constructor(private router:Router, private us:UsuarioService){
+    this.username='';
+    this.password='';
 
   }
   abrirListadomascota(){
+    localStorage.setItem("username", this.username);
     this.router.navigate(["listadomascota"]);
   }
   abrirListadousuario(){
     this.router.navigate(["listadousuario"]);
   }
   getTipo(){
+    localStorage.setItem("username", this.username);
     this.router.navigate(['listadotipo']);
   }
   listadoVenta(){
@@ -34,5 +38,27 @@ export class AppComponent {
   listadoHistorico(){
     this.router.navigate(['historico']);
   }
+  entrarLogin(){
+    this.us.getUnico(this.username).subscribe(dato=>{
+      this.u=dato;
+      if(this.u==null){alert("El username es incorrecto, vuelve a intentarlo")}
+      else if(this.u!=null){
+        localStorage.setItem("username",this.u.username);
+        console.log(this.u)
+        if(this.u.password==this.password){
+          this.num=this.u.tipo_acceso;
+        }
+        else{alert("La contraseña es incorrecta, vuele a intentarlo"); this.password=''}
+      }
+    })
+    console.log(this.num)
+  }
+  cerrarApp(){
+    this.num=-1;
+    this.password='';
+    this.username='';
+    
+  }
+ 
  
 }

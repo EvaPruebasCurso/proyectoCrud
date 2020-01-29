@@ -12,26 +12,26 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				<form #formulario="ngForm">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" class="form-control" name="username" maxlength="6" required placeholder="username" [(ngModel)]="username" >
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" class="form-control" name="password" required placeholder="password" [(ngModel)]="password">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Recuérdame
 					</div>
 					<div class="form-group">
             <button type="reset" value="Borrar" class="btn float-right ml-1 login_btn">Borrar</button>
-            <button type="submit" value="Entrar" class="btn float-right login_btn">Entrar</button>
+            <button type="submit" value="Entrar" (click)="entrarLogin()" class="btn float-right login_btn" [disabled]="!formulario.form.valid">Entrar</button>
             
 					</div>
 				</form>
@@ -56,7 +56,7 @@
 			<div class="form-group botones">
 			<button class="btn float ml-3 boton" (click)="abrirListadousuario()">Usuarios <i class="fas fa-users icono" ></i></button>
 			<button class="btn float ml-3 boton" (click)="abrirListadomascota()">Mascotas <i class="fas fa-paw icono"></i></button>
-			<button class="btn float ml-3 boton" >Cerrar app <i class="fas fa-times-circle"></i></button>
+			<button class="btn float ml-3 boton" (click)="cerrarApp()">Cerrar app <i class="fas fa-times-circle"></i></button>
         	</div>
 		</div>
 			<div class="card-body">
@@ -79,7 +79,7 @@
 			<button class="btn float  boton" (click)="listadoVenta()">Listado para la venta <i class="fas fa-paw icono"></i></button>
 			<button class="btn float ml-3 boton"(click)="getTipo()" >Filtrar por tipo <i class="fas fa-search"></i></button>
 			<button class="btn float ml-3 boton" (click)="listadoHistorico()">Histórico de ventas <i class="fas fa-list"></i></button>
-			<button class="btn float ml-3 boton" >Cerrar app <i class="fas fa-times-circle"></i></button>
+			<button class="btn float ml-3 boton" (click)="cerrarApp()" >Cerrar app <i class="fas fa-times-circle"></i></button>
 		  </div>
 			</div>
 			<div class="card-body lamierda">
@@ -90,7 +90,7 @@
 		</div>
 	</div>
 	</div>
-
+</div>
 
 
 

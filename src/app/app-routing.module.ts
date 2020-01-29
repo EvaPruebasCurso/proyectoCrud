@@ -10,6 +10,9 @@ import { ListadotipoComponent } from './MascotasOperaciones/listadotipo/listadot
 import { ListadoventaComponent } from './MascotasOperaciones/listadoventa/listadoventa.component';
 import { VentaComponent } from './MascotasOperaciones/venta/venta.component';
 import { ListadohistoricoComponent } from './HistoricoOperaciones/listadohistorico/listadohistorico.component';
+import { AppComponent } from './app.component';
+import { MenuadminComponent } from './Menus inicio/menuadmin/menuadmin.component';
+import { MenuuserComponent } from './Menus inicio/menuuser/menuuser.component';
 
 
 const routes: Routes = [
@@ -42,6 +45,9 @@ const routes: Routes = [
   },
   {
     path:'historico', component:ListadohistoricoComponent
+  },
+  {
+    path:'login', component:AppComponent
   }
 ];
 

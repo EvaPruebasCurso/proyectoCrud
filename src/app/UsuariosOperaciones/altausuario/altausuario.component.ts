@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./altausuario.component.css']
 })
 export class AltausuarioComponent implements OnInit {
-  u:Usuario={username:'',password:'',tipo_acceso:1, nombre:'', apellido:'', telefono:0};
+  u:Usuario={username:'',password:'',tipo_acceso:1, nombre:'', apellido:'', telefono:''};
   //El tipo de acceso siempre va a ser 1, porque el administrador va a crear usuarios con el mismo tipo de acceso 
 
   constructor(private us:UsuarioService, private router:Router) { }
@@ -17,7 +17,8 @@ export class AltausuarioComponent implements OnInit {
   ngOnInit() {
   }
   getAlta(){
-    this.u.password=Math.random().toString(36).slice(Math.floor(Math.random() * (12 - 6)) + 6);
+    //Creamos una contraseña aleatoria para el usuario
+    this.u.password=Math.random().toString(36).slice(8);
     this.us.getAlta(this.u).subscribe(resultado=>{this.u=resultado});
     this.router.navigate(['listadousuario']);
 

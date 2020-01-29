@@ -5,8 +5,7 @@
 <div class="row">
   <div class="col-7">
     <input type="text" class="form-control" required [(ngModel)]="tipo" name="tipo" #i_tipo="ngModel">
-    <!--<input class="form-control" type="text" autocomplete="off" name="tipo" id="tipo" required [(ngModel)]="tipo" #tipo="ngModel"> 
-  -->
+
   </div>
 <div class="col-5 pl-0">
   <button type="submit" (click)="getListadoTipo()" class="boton btn float btn-block" [disabled]="!formu.form.valid">Buscar </button>
@@ -20,7 +19,7 @@
 </form>
 
 
-<div *ngIf="tabla==true">
+<div *ngIf="tabla">
 <h5 class="text-center titulo">Listado filtrado por tipo</h5>
       <div class="row mt-2 offset-2"> 
       <div class="col-10">
@@ -40,7 +39,7 @@
               <td>{{m.nombre}}</td>
               <td>{{m.tipo}}</td>
               <td>{{m.precio}}</td>
-              <td>Boton</td>
+              <td><button class="botonmod" (click)="Venta(m)"><i  class="fas fa-shopping-cart"></i></button></td>
             </tr>
             
           </tbody>
@@ -50,4 +49,4 @@
       
     </div>
 
-    <div *ngIf="tabla==false">No se ha encontrado ningún animal de ese tipo</div>
+    <div class="negativo col-6 offset-3 text-center" *ngIf="tabla==false">No se ha encontrado ningún animal de ese tipo</div>

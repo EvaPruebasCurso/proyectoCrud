@@ -10,6 +10,7 @@
               <th scope="col">TIPO</th>
               <th scope="col">PRECIO</th>
               <th scope="col">MODIFICAR</th>
+              <th scope="col">VENDER</th>
               <th scope="col">ELIMINAR</th>
             </tr>
           </thead>
@@ -20,6 +21,7 @@
               <td>{{m.tipo}}</td>
               <td>{{m.precio}}</td>
               <td><button class="botonmod" (click)="modificarMascota(m)"><i  class="fas fa-edit"></i></button></td>
+              <td><button class="botonmod" (click)="Venta(m)"><i  class="fas fa-shopping-cart"></i></button></td>
               <td><button class="botonmod"(click)="eliminarMascota(m)"><i class="fas fa-trash-alt"></i></button></td>
             </tr>
             

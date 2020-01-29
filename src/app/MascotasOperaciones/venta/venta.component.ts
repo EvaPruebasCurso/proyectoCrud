@@ -70,7 +70,9 @@ export class VentaComponent implements OnInit {
     this.cs.getAlta(this.c).subscribe(dato1=>{this.c=dato1});
     this.vender();
     alert("El comprador se ha registrado y se ha hecho la venta con éxito")
-    this.router.navigate(['listadoventa']);
+    let username=localStorage.getItem("username");
+    if(username=="admin"){this.router.navigate(['listadomascota'])}
+    else{this.router.navigate(['listadoventa'])}
 
   }
 }

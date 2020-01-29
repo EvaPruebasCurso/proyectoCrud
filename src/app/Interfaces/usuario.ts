@@ -4,5 +4,5 @@ export interface Usuario {
     tipo_acceso?:number;
     nombre:string;
     apellido:string;
-    telefono:number;
+    telefono:string;
 }
