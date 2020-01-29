@@ -1,0 +1,36 @@
+<h5 class="text-center titulo">Listado histórico de ventas</h5>
+      <div class="row mt-2 ">
+      <div class="col-10 offset-1">
+        <table class="table table-bordered table-dark">
+          <thead>
+            <tr>
+                <th scope="col">ID</th>
+              <th scope="col">USERNAME DEL VENDEDOR</th>
+              <th scope="col">ID DE MASCOTA</th>
+              <th scope="col">NOMBRE MASCOTA</th>
+              <th scope="col">TIPO MASCOTA</th>
+              <th scope="col">PRECIO MASCOTA</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor ="let h of historicos">
+              <th scope="row">{{h.id}}</th>
+              <td>{{h.vend_username}}</td>
+              <td>{{h.id_mascota}}</td>
+              <td>{{h.nombre_mascota}}</td>
+              <td>{{h.tipo_mascota}}</td>
+              <td>{{h.precio_mascota}}</td>
+              
+            </tr>
+            
+          </tbody>
+          <tfoot>
+              <tr>
+                  <td>Recaudación total</td>
+                  <td>{{total()}}</td>
+              </tr>
+          </tfoot>
+        </table>
+      </div>
+      </div>

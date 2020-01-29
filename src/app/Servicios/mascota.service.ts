@@ -16,6 +16,9 @@ export class MascotaService {
    getUnico(id:number){
      return this.http.get<Mascota>(this.path+"/"+id);
    }
+   getTipo(tipo:string){
+     return this.http.get<Mascota[]>(this.path+"buscar/"+tipo);
+   }
    getAlta(m:Mascota){
      return this.http.post<Mascota>(this.path,m);
    }

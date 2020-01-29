@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { MascotaService } from './Servicios/mascota.service';
-import { Mascota } from './Interfaces/mascota';
 import { UsuarioService } from './Servicios/usuario.service';
 import { Usuario } from './Interfaces/usuario';
 
@@ -12,7 +10,7 @@ import { Usuario } from './Interfaces/usuario';
 })
 export class AppComponent {
   title = 'proyectoCrud';
-  username="usernamedelogin";
+  username="usernam";
   password=null;
   num:number=1;
   u:Usuario;
@@ -26,8 +24,15 @@ export class AppComponent {
   abrirListadousuario(){
     this.router.navigate(["listadousuario"]);
   }
-  getUnico(){
-    this.ms.getUnico("admin").subscribe(datos=>{this.u=datos});
+  getTipo(){
+    this.router.navigate(['listadotipo']);
+  }
+  listadoVenta(){
+    localStorage.setItem("username",this.username);
+    this.router.navigate(['listadoventa']);
+  }
+  listadoHistorico(){
+    this.router.navigate(['historico']);
   }
  
 }

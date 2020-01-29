@@ -1,0 +1,101 @@
+<form *ngIf="valor==0" class="form-group col-6 offset-3" #formu="ngForm" > 
+    <div class="row">
+    <label class="titulo col-12" for="dni">Dni del comprador que desea la mascota:</label>
+  </div>
+  <div class="row">
+    <div class="col-7">
+      <input type="text" class="form-control" required [(ngModel)]="dni" name="dni" #obl="ngModel">
+    
+    </div>
+  <div class="col-5 pl-0">
+    <button type="submit" (click)="buscarDni()" class="boton btn float btn-block" [disabled]="!formu.form.valid">Buscar </button>
+  </div>
+    <div class="alert alert-danger" *ngIf="obl.invalid && (obl.dirty || obl.touched)"> 
+      <div *ngIf="obl.errors.required">El dni es obligatorio</div>
+    </div>
+
+  </div>
+  
+  </form>
+
+<div *ngIf="valor==1">
+    {{dniCorrecto()}}
+</div>
+
+<div class="row formu" *ngIf="valor==2">
+  <div class="titulo col-6 offset-3 ">El comprador no está registrado, debe proceder a ello:</div>
+  <form action="" class="form-group col-6 offset-3" #formu2="ngForm" > 
+    
+    <label class="titulo col-12" for="dni">Dni:</label>
+    <input type="text" class="form-control" name="dni" id="dni" required 
+     [(ngModel)]="dni" name="dni" id="dni" #obl1="ngModel">
+
+    <div class="alert alert-danger" *ngIf="obl1.invalid && (obl1.dirty || obl1.touched)"> 
+      <div *ngIf="obl1.errors.required">El dni es obligatorio</div>
+
+    </div>
+
+    <label class="titulo col-12" for="Nombre">Nombre:</label>
+    <input type="text" class="form-control" name="nombre" id="nombre" required
+     pattern="^[a-zA-Z ]*$" [(ngModel)]="nombre" name="nombre" id="nombre" #obl2="ngModel">
+
+    <div class="alert alert-danger" *ngIf="obl2.invalid && (obl2.dirty || obl2.touched)"> 
+      <div *ngIf="obl2.errors.required">El nombre es obligatorio</div>
+      <div [hidden]="!obl2.errors?.pattern">
+        Debe contener solo letras
+    </div>
+    </div>
+
+
+    <label class="titulo col-12" for="apellido">Apellido:</label>
+    <input type="text" class="form-control" name="apellido" id="apellido" 
+    pattern="^[a-zA-Z ]*$" required [(ngModel)]="apellido"  #obl3="ngModel">
+
+    <div class="alert alert-danger" *ngIf="obl3.invalid && (obl3.dirty || obl3.touched)"> 
+      <div *ngIf="obl3.errors.required">El apellido es obligatorio</div>
+      <div [hidden]="!obl3.errors?.pattern">
+        Debe contener solo letras
+    </div>
+    </div>
+
+    <label class="titulo col-12" for="direccion">Dirección:</label>
+    <input type="text" class="form-control" name="direccion" id="direccion" required [(ngModel)]="direccion"  #obl4="ngModel">
+
+    <div class="alert alert-danger" *ngIf="obl4.invalid && (obl4.dirty || obl4.touched)"> 
+      <div *ngIf="obl4.errors.required">La dirección es obligatoria</div>
+    </div>
+    <label class="titulo col-12" for="localidad">Localidad:</label>
+    <input type="text" class="form-control" name="localidad" id="localidad" required [(ngModel)]="localidad"  #obl5="ngModel">
+
+    <div class="alert alert-danger" *ngIf="obl5.invalid && (obl5.dirty || obl5.touched)"> 
+      <div *ngIf="obl5.errors.required">La localidad es obligatoria</div>
+    </div>
+
+    <label class="titulo col-12" for="correo">Correo:</label>
+    <input type="email" class="form-control" name="correo" id="correo" required [(ngModel)]="correo" 
+    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #obl6="ngModel">
+
+    <div class="alert alert-danger" *ngIf="obl6.invalid && (obl6.dirty || obl6.touched)"> 
+      <div *ngIf="obl6.errors.required">El correo es obligatorio</div>
+      <div [hidden]="!obl6.errors?.pattern">
+        El formato no es el correcto
+    </div>
+    </div>
+    
+
+    <label class="titulo col-12" for="telefono">Teléfono:</label>
+    <input type="text" class="form-control" name="telefono" id="telefono" pattern="^\d+$"
+    minlength="9" maxlength="9" required [(ngModel)]="telefono"  #obl7="ngModel">
+
+    <div class="alert alert-danger" *ngIf="obl7.invalid && (obl7.dirty || obl7.touched)"> 
+      <div *ngIf="obl7.errors.required">El teléfono es obligatorio</div>
+      <div *ngIf="obl7.errors.pattern">Solo puede tener números</div>
+      <div *ngIf="obl7.errors.minlength">Debe contener 9 números</div>
+    </div>
+
+  <button type="submit" (click)="dniRegistrar()" class="boton mt-2 col-3 btn float-right btn-block" [disabled]="!formu2.form.valid">Registrar</button>
+  
+  </form>
+</div>
+
+

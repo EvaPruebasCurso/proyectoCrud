@@ -22,9 +22,11 @@ export class ModificarusuarioComponent implements OnInit {
   }
   Actualizar(u:Usuario)
   {
+    let num=Math.floor(Math.random() * (12 - 6)) + 6;
+    this.u.password=Math.random().toString(36).slice(num);
     this.us.getModificar(u).subscribe(datos=>{
       this.u=datos;
-      this.router.navigate(["listausuario"]);
+      this.router.navigate(["listadousuario"]);
     })
   }
 

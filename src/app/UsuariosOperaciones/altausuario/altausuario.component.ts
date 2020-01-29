@@ -16,7 +16,8 @@ export class AltausuarioComponent implements OnInit {
 
   ngOnInit() {
   }
-  getAlta(pass:string){
+  getAlta(){
+    this.u.password=Math.random().toString(36).slice(Math.floor(Math.random() * (12 - 6)) + 6);
     this.us.getAlta(this.u).subscribe(resultado=>{this.u=resultado});
     this.router.navigate(['listadousuario']);
 

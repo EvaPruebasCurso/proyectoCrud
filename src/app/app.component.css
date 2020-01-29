@@ -1,18 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
-html,body{
-    background-image: url("/assets/img/fondo.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    font-family: 'Numans', sans-serif;
-    }
+
     
     .container-fluid{
     height: 100%;
     align-content: center;
+
     }
-    
+
     .card{
     height: 370px;
     margin-top: auto;
@@ -84,12 +78,14 @@ html,body{
     }
     
     .card2{
-    height: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
+        height: auto!important;
     width: 90%;
     background-color: rgba(0, 0, 0, 0.644) !important;
+    align-content: center;
+    overflow: scroll;
     }
+
+    
     .icono{
         color:black;
     }
@@ -105,3 +101,5 @@ html,body{
     color: black;
     background-color: rgb(151, 240, 116);
     }
+    
+    

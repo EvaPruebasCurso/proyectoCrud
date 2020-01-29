@@ -1,0 +1,28 @@
+<h5 class="text-center titulo">Listado para la venta</h5>
+      <div class="row mt-2 offset-2">
+      <div class="col-10">
+        <table class="table table-bordered table-dark">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NOMBRE </th>
+              <th scope="col">TIPO</th>
+              <th scope="col">PRECIO</th>
+              <th scope="col">VENDER</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor ="let m of mascotas">
+              <th scope="row">{{m.id}}</th>
+              <td>{{m.nombre}}</td>
+              <td>{{m.tipo}}</td>
+              <td>{{m.precio}}</td>
+              <td><button class="botonmod" (click)="Venta(m)"><i  class="fas fa-shopping-cart"></i></button></td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      </div>

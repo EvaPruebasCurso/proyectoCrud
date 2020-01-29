@@ -11,6 +11,10 @@ import {FormsModule} from '@angular/forms';
 import { AltausuarioComponent } from './UsuariosOperaciones/altausuario/altausuario.component';
 import { ListadousuarioComponent } from './UsuariosOperaciones/listadousuario/listadousuario.component';
 import { ModificarusuarioComponent } from './UsuariosOperaciones/modificarusuario/modificarusuario.component';
+import { VentaComponent } from './MascotasOperaciones/venta/venta.component';
+import { ListadotipoComponent } from './MascotasOperaciones/listadotipo/listadotipo.component';
+import { ListadoventaComponent } from './MascotasOperaciones/listadoventa/listadoventa.component';
+import { ListadohistoricoComponent } from './HistoricoOperaciones/listadohistorico/listadohistorico.component';
 
 
 @NgModule({
@@ -22,6 +26,10 @@ import { ModificarusuarioComponent } from './UsuariosOperaciones/modificarusuari
     AltausuarioComponent,
     ListadousuarioComponent,
     ModificarusuarioComponent,
+    VentaComponent,
+    ListadotipoComponent,
+    ListadoventaComponent,
+    ListadohistoricoComponent,
   ],
   imports: [
     BrowserModule,

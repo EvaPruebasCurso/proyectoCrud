@@ -1,9 +1,7 @@
 <h5 class="text-center titulo">Modificar usuario</h5>
-        <form class="form-group col-4 offset-4" (submit)="getAlta(u.password)" > 
+        <form class="form-group col-4 offset-4" (submit)="Actualizar(u)" > 
             <label class="titulo" for="username">Username:</label>
             <input class="form-control" type="text" autocomplete="off" name="username" id="username" required [(ngModel)]="u.username">
-            <label class="titulo" for="password">Password:</label>
-            <input class="form-control" type="text" autocomplete="off" name="password" id="password" required [(ngModel)]="u.password" > 
             <label class="titulo" for="nombre">Nombre:</label>
             <input class="form-control" type="text" autocomplete="off" name="nombre" id="nombre" required [(ngModel)]="u.nombre">
             <label class="titulo" for="apellido">Apellido:</label>

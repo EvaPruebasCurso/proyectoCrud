@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>MASCOTILANDIA</title>
-  
-</head>
-<body>
-
 
 <!--PARA EL PRIMER LOGIN-->
-<div *ngIf="num==-1" class="container">
+<div *ngIf="num==-1" class="container-fluid">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
@@ -54,53 +46,50 @@
 	</div>
 </div>
 
-<!--SI ENTRA EL ADMIN-->
-<div *ngIf="num==0" class="container-fluid">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card2">
-			<div class="card-header">
-        <h3 class="text-center">BIENVENIDO ADMINISTRADOR</h3>
-        <p class="text-center">¿Qué desea gestionar?</p>
-				<div class="form-group botones">
-          <button class="btn float mr-3 boton" (click)="abrirListadousuario()">Usuarios <i class="fas fa-users icono" ></i></button>
-		  <button class="btn float ml-3 boton" (click)="abrirListadomascota()">Mascotas <i class="fas fa-paw icono"></i></button>
-		  <button class="btn float mr-3 boton" >Ventas <i class="fas fa-shopping-cart"></i></button>
-		  <button class="btn float ml-3 boton" >Cerrar app <i class="fas fa-times-circle"></i></button>
-        </div>
-			</div>
+<!--SI ENTRA EL ADMIN <div class="d-flex justify-content-center h-100"> <div *ngIf="num==0" class="container-fluid">-->
+
+	
+	<div *ngIf="num==0" class="card2 container-fluid">
+		<div class="card-header">
+        	<h3 class="text-center">BIENVENIDO ADMINISTRADOR</h3>
+        	<p class="text-center">¿Qué desea gestionar?</p>
+			<div class="form-group botones">
+			<button class="btn float ml-3 boton" (click)="abrirListadousuario()">Usuarios <i class="fas fa-users icono" ></i></button>
+			<button class="btn float ml-3 boton" (click)="abrirListadomascota()">Mascotas <i class="fas fa-paw icono"></i></button>
+			<button class="btn float ml-3 boton" >Cerrar app <i class="fas fa-times-circle"></i></button>
+        	</div>
+		</div>
 			<div class="card-body">
         
           
-      <router-outlet></router-outlet>	
+      		<router-outlet></router-outlet>	
 			</div>
-		</div>
 	</div>
-</div>
+	
+
 <!--SI ENTRA UN USUARIO-->
 <div *ngIf="num==1" class="container-fluid">
-	<div class="d-flex justify-content-center h-100">
+	
+	<div class="todo d-flex justify-content-center h-100">
 		<div class="card2">
-			<div class="card-header">
+			<div class="card-header enserio">
         <h3 class="text-center">BIENVENIDO {{username}}</h3>
         <p class="text-center">¿Qué desea hacer?</p>
 		<div class="form-group botones">
-			<button class="btn float mr-3 boton" >Listado para la venta <i class="fas fa-paw icono"></i></button>
-			<button class="btn float ml-3 boton" >Filtrar por tipo <i class="fas fa-search"></i></button>
-			<button class="btn float ml-3 boton" >Histórico de ventas <i class="fas fa-list"></i></button>
+			<button class="btn float  boton" (click)="listadoVenta()">Listado para la venta <i class="fas fa-paw icono"></i></button>
+			<button class="btn float ml-3 boton"(click)="getTipo()" >Filtrar por tipo <i class="fas fa-search"></i></button>
+			<button class="btn float ml-3 boton" (click)="listadoHistorico()">Histórico de ventas <i class="fas fa-list"></i></button>
 			<button class="btn float ml-3 boton" >Cerrar app <i class="fas fa-times-circle"></i></button>
 		  </div>
 			</div>
-			<div class="card-body">
+			<div class="card-body lamierda">
         
-          
-      <router-outlet></router-outlet>	
-			</div>
+			
+     		 <router-outlet></router-outlet>	
+			
 		</div>
 	</div>
-</div>
-
-</body>
-</html>
+	</div>
 
 
 

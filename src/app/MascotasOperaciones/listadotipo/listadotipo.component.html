@@ -1,0 +1,53 @@
+<form class="form-group col-3 offset-4" #formu="ngForm" > 
+  <div class="row">
+  <label class="titulo col-12" for="tipo">Tipo de la mascota:</label>
+</div>
+<div class="row">
+  <div class="col-7">
+    <input type="text" class="form-control" required [(ngModel)]="tipo" name="tipo" #i_tipo="ngModel">
+    <!--<input class="form-control" type="text" autocomplete="off" name="tipo" id="tipo" required [(ngModel)]="tipo" #tipo="ngModel"> 
+  -->
+  </div>
+<div class="col-5 pl-0">
+  <button type="submit" (click)="getListadoTipo()" class="boton btn float btn-block" [disabled]="!formu.form.valid">Buscar </button>
+</div>
+  <div class="alert alert-danger" *ngIf="i_tipo.invalid && (i_tipo.dirty || i_tipo.touched)"> 
+    <div *ngIf="i_tipo.errors.required">El tipo es obligatorio</div>
+  </div>
+
+</div>
+
+</form>
+
+
+<div *ngIf="tabla==true">
+<h5 class="text-center titulo">Listado filtrado por tipo</h5>
+      <div class="row mt-2 offset-2"> 
+      <div class="col-10">
+        <table class="table table-bordered table-dark">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NOMBRE </th>
+              <th scope="col">TIPO</th>
+              <th scope="col">PRECIO</th>
+              <th scope="col">VENDER</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor ="let m of mascotas">
+              <th scope="row">{{m.id}}</th>
+              <td>{{m.nombre}}</td>
+              <td>{{m.tipo}}</td>
+              <td>{{m.precio}}</td>
+              <td>Boton</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      </div>
+      
+    </div>
+
+    <div *ngIf="tabla==false">No se ha encontrado ningún animal de ese tipo</div>
