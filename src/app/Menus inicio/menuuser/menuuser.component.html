@@ -1,1 +1,8 @@
-<p>menuuser works!</p>
+<h3 class="text-center">BIENVENIDO {{username}}</h3>
+				<p class="text-center">¿Qué desea hacer?</p>
+				<div class="form-group botones">
+					<button class="btn float  boton" (click)="listadoVenta()">Listado para la venta <i class="fas fa-paw icono"></i></button>
+					<button class="btn float ml-3 boton"(click)="getTipo()" >Filtrar por tipo <i class="fas fa-search"></i></button>
+					<button class="btn float ml-3 boton" (click)="listadoHistorico()">Histórico de ventas <i class="fas fa-list"></i></button>
+					<button class="btn float ml-3 boton" (click)="cerrarApp()" >Cerrar app <i class="fas fa-times-circle"></i></button>
+</div>

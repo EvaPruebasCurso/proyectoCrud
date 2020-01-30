@@ -17,6 +17,8 @@ import { ListadoventaComponent } from './MascotasOperaciones/listadoventa/listad
 import { ListadohistoricoComponent } from './HistoricoOperaciones/listadohistorico/listadohistorico.component';
 import { MenuadminComponent } from './Menus inicio/menuadmin/menuadmin.component';
 import { MenuuserComponent } from './Menus inicio/menuuser/menuuser.component';
+import { AdminitradorComponent } from './opciones/adminitrador/adminitrador.component';
+import { UsuarioComponent } from './opciones/usuario/usuario.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { MenuuserComponent } from './Menus inicio/menuuser/menuuser.component';
     ListadohistoricoComponent,
     MenuadminComponent,
     MenuuserComponent,
+    AdminitradorComponent,
+    UsuarioComponent,
   ],
   imports: [
     BrowserModule,

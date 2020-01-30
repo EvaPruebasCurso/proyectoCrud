@@ -62,7 +62,6 @@ export class AppComponent {
     this.router.navigate(['login']);
     this.password='';
     this.username='';
-    
   }
  
  
