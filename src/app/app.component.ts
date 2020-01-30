@@ -12,27 +12,28 @@ export class AppComponent {
   title = 'proyectoCrud';
   username:string;
   password:string;
-  num:number=-1;
+  num:String;
   u:Usuario;
 
   constructor(private router:Router, private us:UsuarioService){
     this.username='';
     this.password='';
-
+    
+  }
+  ngOnInit() {
+    localStorage.setItem("tipo_acceso_SESSION","-1");
+    this.num="-1";
   }
   abrirListadomascota(){
-    localStorage.setItem("username", this.username);
     this.router.navigate(["listadomascota"]);
   }
   abrirListadousuario(){
     this.router.navigate(["listadousuario"]);
   }
   getTipo(){
-    localStorage.setItem("username", this.username);
     this.router.navigate(['listadotipo']);
   }
   listadoVenta(){
-    localStorage.setItem("username",this.username);
     this.router.navigate(['listadoventa']);
   }
   listadoHistorico(){
@@ -46,7 +47,9 @@ export class AppComponent {
         localStorage.setItem("username",this.u.username);
         console.log(this.u)
         if(this.u.password==this.password){
-          this.num=this.u.tipo_acceso;
+          localStorage.setItem("tipo_acceso_SESSION",this.u.tipo_acceso.toString());
+          this.num=this.u.tipo_acceso.toString();
+          console.log(this.num);
         }
         else{alert("La contraseña es incorrecta, vuele a intentarlo"); this.password=''}
       }
@@ -54,7 +57,9 @@ export class AppComponent {
     console.log(this.num)
   }
   cerrarApp(){
-    this.num=-1;
+    localStorage.setItem("tipo_acceso_SESSION","-1");
+    this.num="-1";
+    this.router.navigate(['login']);
     this.password='';
     this.username='';
     

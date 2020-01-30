@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
 import { MenuadminComponent } from './Menus inicio/menuadmin/menuadmin.component';
 import { MenuuserComponent } from './Menus inicio/menuuser/menuuser.component';
 
-
 const routes: Routes = [
   {
     path:'listadomascota', component: ListadoComponent
